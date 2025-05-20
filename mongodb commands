@@ -1,1 +1,26 @@
-monogobd commands
+monogo db  commands
+
+show dbs
+
+use dbName // for create new db 
+
+db.createCollection("student")
+
+db.student.drop() for drop collection
+
+db.dropDatabase()
+
+db.student.renameCollection("students")
+
+db.student.insertone({})
+ 
+db.student.find().pretty() for view the collection data
+
+db.student.find({"f_name":"mujeeb"})
+
+db.student.findOne({_id:ObjectId("adsfdsfasd")})
+
+db.student.deleteOne({_id:ObjectId("adsfdsfasd")})
+
+db.student.updateOne({_id:ObjectId("682c5b353b8e178a453a6514")},{$set:{f_name:"hania new"}})
+
