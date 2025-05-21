@@ -1,6 +1,21 @@
-const {MongoClient} =require("mongodb")
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
 
-let dbConnection = () => {
+// Connection URL
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url);
+
+// Database Name
+const dbName = 'schoolDB';
+
+async function dbConnection() {
+  // Use connect method to connect to the server
+  await client.connect();
+  const db = client.db(dbName);
 
 
+  return db;
 }
+
+module.exports = {dbConnection}
